@@ -5,7 +5,6 @@ class Search < ApplicationRecord
   def self.check_to_twitter(user, info)
 
   searchquery = Searchquery.new("searchword": :info)
-  byebug
   searchquery.user = user
   searchquery.save
 # this line update the twitter account with info of user inputs

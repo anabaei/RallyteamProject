@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
+  get 'users/index'
+
   get 'searchqueries/show'
 
   get 'searchqueries/index'
+
+  resources :rawresult do
+     resources :likes, only: [:create, :destroy]
+  end
 
   resources :favorites
   resources :searches
