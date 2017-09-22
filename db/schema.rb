@@ -10,10 +10,41 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170921032649) do
+ActiveRecord::Schema.define(version: 20170922000741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "favorites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "screen_name"
+    t.string "name"
+    t.string "profile_image_url"
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
+
+  create_table "likes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "rawresult_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["rawresult_id"], name: "index_likes_on_rawresult_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
+  create_table "rawresults", force: :cascade do |t|
+    t.bigint "searchquery_id"
+    t.string "screen_name"
+    t.string "name"
+    t.string "profile_image_url"
+    t.string "text"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["searchquery_id"], name: "index_rawresults_on_searchquery_id"
+  end
 
   create_table "searches", force: :cascade do |t|
     t.string "info"
@@ -21,7 +52,16 @@ ActiveRecord::Schema.define(version: 20170921032649) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "searchkey"
+    t.string "name"
     t.index ["user_id"], name: "index_searches_on_user_id"
+  end
+
+  create_table "searchqueries", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "searchword"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_searchqueries_on_user_id"
   end
 
   create_table "tweets", force: :cascade do |t|
@@ -43,6 +83,11 @@ ActiveRecord::Schema.define(version: 20170921032649) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "favorites", "users"
+  add_foreign_key "likes", "rawresults"
+  add_foreign_key "likes", "users"
+  add_foreign_key "rawresults", "searchqueries"
   add_foreign_key "searches", "users"
+  add_foreign_key "searchqueries", "users"
   add_foreign_key "tweets", "users"
 end

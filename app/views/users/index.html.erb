@@ -1,0 +1,14 @@
+
+
+<% @myfav.each do |list| %>
+
+ <%   result  = Rawresult.find(list.rawresult_id) %>
+ <ul>
+  <li> <%= result.screen_name %> </li>
+   <%= image_tag(result.profile_image_url , size: "50x50", :alt => "rss feed", :class => "img-circle") %>
+  <li> <%= result.name %> </li>
+  <li> <%= result.text %> </li>
+  <li> <%= result.created_at %> </li>
+</ul>
+
+<% end %>

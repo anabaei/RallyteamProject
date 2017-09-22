@@ -1,0 +1,28 @@
+<!-- NavBar -->
+
+
+
+
+
+<h1>Search Results</h1>
+
+
+<% @result.each do |result| %>
+
+ <ul>
+  <li> <%= result.screen_name %> </li>
+
+   <%= image_tag(result.profile_image_url , size: "50x50", :alt => "rss feed", :class => "img-circle") %>
+  <li> <%= result.name %> </li>
+  <li> <%= result.text %> </li>
+  <li> <%= result.created_at %> </li>
+
+    <% if result.likes.size > 0 %>
+      <%= link_to "unlike", rawresult_likes_path(result), method: :post %>
+     <% else  %>
+      <%= link_to "like", rawresult_likes_path(result), method: :post %>
+    <% end %>
+
+</ul>
+
+<% end %>

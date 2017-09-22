@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+$brand-primary: orange;
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
