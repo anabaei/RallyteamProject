@@ -1,8 +1,6 @@
 class TweetsController < ApplicationController
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
 
-
-
 def index
     @tweet = Tweet.new
   # @tweets = Tweet.all
@@ -22,10 +20,10 @@ def edit
 end
 
 def create
-
   @tweet = Tweet.new(tweet_params)
   @tweet.user = current_user
   @tweet.save
+  redirect_to root_path,   notice: 'you just post a text in your Twitter account 👏'
   # respond_with(@tweet)
 end
 

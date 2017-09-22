@@ -12,12 +12,13 @@
       </ul>
     </div>
   <% end %>
-
+<div align="center" class="form-group" >
   <div class="field">
     <%= f.label :body %><br>
     <%= f.text_area :body %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Tweet now!",  class: "btn btn-success" %>
   </div>
+</div>
 <% end %>

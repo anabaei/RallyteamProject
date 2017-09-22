@@ -8,7 +8,7 @@ class Search < ApplicationRecord
   searchquery.user = user
   searchquery.save
 # this line update the twitter account with info of user inputs
-      user.twitter.search(info, :result_type => "recent").take(10).collect do |tweet|
+      user.twitter.search(info, :result_type => "recent").take(40).collect do |tweet|
           rawsearch =  Rawresult.new(
             "name": "#{tweet.user.name}",
             "screen_name": "#{tweet.user.screen_name}",
