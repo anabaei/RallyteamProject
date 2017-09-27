@@ -12,7 +12,7 @@
   <li> <%= result.text %> </li>
   <li> <%= result.created_at %> </li>
 
-  <%= link_to fa_icon('heart-o lg'), rawresult_like_path(result, current_user), method: :delete %>
+  <%= link_to "unLike", rawresult_like_path(result, current_user), method: :delete %>
 </ul>
 
 <% end %>
