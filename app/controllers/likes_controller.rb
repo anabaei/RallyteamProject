@@ -1,8 +1,9 @@
 class LikesController < ApplicationController
   before_action :find_rawresult, only: [:create]
-  before_action :find_like, only: [:destroy]
+
 
   def create
+
     like = Like.new user: current_user, rawresult: @rawresult
 
     if like.save
@@ -13,8 +14,10 @@ class LikesController < ApplicationController
   end
 
   def destroy
+
+   @like = Like.find_by rawresult_id: params[:rawresult_id]
     if @like.destroy
-    redirect_to users_index_path,  notice: '😕'
+    redirect_to users_index_path,  notice: 'you removed one tweet from your fav list😕'
     else
     redirect_to users_index_path,  alert: @like.errors.full_messages.join(', ')
     end

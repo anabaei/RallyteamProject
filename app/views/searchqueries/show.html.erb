@@ -18,9 +18,9 @@
   <li> <%= result.created_at %> </li>
 
     <% if result.likes.size > 0 %>
-      <%= link_to "unlike", rawresult_likes_path(result), method: :post %>
+      <%= link_to fa_icon('heart-o lg'), rawresult_like_path(result, current_user), method: :delete %>Remove
      <% else  %>
-      <%= link_to "like", rawresult_likes_path(result), method: :post %>
+      <%= link_to fa_icon('heart lg'), rawresult_likes_path(result), method: :post %>
     <% end %>
 
 </ul>
