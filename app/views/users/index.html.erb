@@ -1,5 +1,5 @@
 
-
+<div class="col col-md-12">
 <h3> List of My Favorites Tweets </h3>
 <% @myfav.each do |list| %>
  <%   result  = Rawresult.find(list.rawresult_id) %>
@@ -12,3 +12,4 @@
   <%= link_to fa_icon('heart-o lg'), rawresult_like_path(result, current_user), method: :delete %>
 </ul>
 <% end %>
+</div>
