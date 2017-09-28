@@ -23,12 +23,19 @@ $brand-primary: #4d004d;
 
 .fa-heart:hover {
   font-size: 300%;
-  color: red !important;
+
 }
 
 .fa-heart-o:hover {
   font-size: 300%;
-  color: blue !important;
+
+}
+body{
+  background-color: lightgrey;
+}
+
+.content {
+  background-color: white;
 }
 
 // .modal-body > .btn-block {

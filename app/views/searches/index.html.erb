@@ -1,4 +1,5 @@
 
+
 <%= form_for(@search) do |f| %>
   <% if @search.errors.any? %>
     <div id="error_explanation">
@@ -36,23 +37,17 @@
                    <div class="class='btn btn-warning btn-lg btn-block">
                      <%= link_to "Sign in with Twitter", "/auth/twitter" %>
                    </div>
-
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
         <script>
         $(document).ready(function(){
             // Show the Modal on load
             $("#myModal").modal("show");
-
             // Hide the Modal
-            $("#myBtn").click(function(){
-                $("#myModal").modal("hide");
-            });
         });
         </script>
 
