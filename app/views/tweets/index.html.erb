@@ -1,5 +1,4 @@
 
-<div class="col col-md-12">
 <%= form_for(@tweet) do |f| %>
   <% if @tweet.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-  <div align="center" class="form-group" >
+  <!-- <div align="center" class="form-group" >
     <div class="field">
       <%= f.label :body %><br>
       <%= f.text_area :body %>
@@ -19,6 +18,14 @@
     <div class="actions">
       <%= f.submit "Tweet now!",  class: "btn btn-success" %>
     </div>
+  </div> -->
+
+  <div class="input-group">
+      <%= f.text_field :body, placeholder: "tweet in 150 char...", class: "form-control" %>
+      <span class="input-group-btn">
+         <%= f.submit "Tweet",  class: "btn btn-danger" %>
+      </span>
   </div>
+
+
 <% end %>
-</div>
