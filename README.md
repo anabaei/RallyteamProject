@@ -5,7 +5,7 @@
 2- user can twittes from this app  
 ### To Run
 
-   | Online        | Local host
+  Header    | Online        | Local host
 ------------ | ------------- | -------------
 Access | from [this link ](https://rallyteam.herokuapp.com/)  | `git pull` `bundle` `rake db:create` `db:migrate` then `rails s`
 Common Issues |  Error Heroku : you have to **refresh** page | make sure port 3000 is free, install required gems
