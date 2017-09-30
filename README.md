@@ -8,7 +8,7 @@
 Header | Online        | Local host
 ------------ | ------------- | -------------
 Access | from [this link ](https://rallyteam.herokuapp.com/)  | `git pull` `bundle` `rake db:create` `db:migrate` then `rails s`
-Common Issues |  Error Heroku : you have to **refresh** page | make sure port 3000 is free
+Common Issues |  Error Heroku : you have to **refresh** page | make sure port 3000 is free, install required gems
 
 
 ![alt text](https://user-images.githubusercontent.com/7471619/30997775-e649c1c0-a47e-11e7-8d09-fce743e1d6bb.png)
